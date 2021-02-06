@@ -1,0 +1,10 @@
+<h1>新規投稿</h1>
+<%= form_for( @souvenirs, url:{controller: :souvenirs, action: :create}) do |f| %>
+<%= f.label:name %>
+<%= f.text_field:"name" %>
+<% end %>
+t.string :name
+      t.string :prefectures
+      t.text :comment
+      t.string :image_name
+      t.string :user_id
