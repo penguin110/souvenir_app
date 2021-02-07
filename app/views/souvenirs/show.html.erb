@@ -1,2 +1,8 @@
-<h1>Souvenirs#show</h1>
-<p>Find me in app/views/souvenirs/show.html.erb</p>
+<h1>詳細ページ</h1>
+
+    品名： <%= @souvenirs.name %><br/>
+    都道府県名： <%= @souvenirs.prefectures %><br/>
+    コメント： <%= @souvenirs.comment %><br/>
+    画像画像： <%= @souvenirs.image_name %><br/>
+    投稿者： <%= @souvenirs.user_id %><br/>
+    <%= link_to("編集",sou_edit_path) %><br/>

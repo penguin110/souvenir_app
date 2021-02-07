@@ -1,10 +1,15 @@
 <h1>新規投稿</h1>
 <%= form_for( @souvenirs, url:{controller: :souvenirs, action: :create}) do |f| %>
-<%= f.label:name %>
-<%= f.text_field:"name" %>
+      <%= f.label:品名 %>
+      <%= f.text_field:"name" %><br/>
+      <%= f.label:都道府県名 %>
+      <%= f.text_field:"prefectures"%><br/>
+      <%= f.label:コメント %>
+      <%= f.text_area:"comment" %><br/>
+      <%= f.label:写真 %>
+      <%= f.file_field:"image_name" %><br/>
+      <%= f.label:投稿者 %>
+      <%= f.text_field:"user_id" %><br/>
+      <%= f.submit"投稿する" %>
+
 <% end %>
-t.string :name
-      t.string :prefectures
-      t.text :comment
-      t.string :image_name
-      t.string :user_id

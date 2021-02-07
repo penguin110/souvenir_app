@@ -2,8 +2,11 @@ Rails.application.routes.draw do
   #souvenirs 
   root 'souvenirs#index'
   get 'souvenirs/new', to:'souvenirs#new', as:'new'
-  get 'souvenirs/show'
+  get 'souvenirs/:id', to:'souvenirs#show', as:'show'
   post 'souvenirs/create', to:'souvenirs#create', as:'create'
+  get 'souvenirs/:id/edit', to:'souvenirs#edit', as: 'sou_edit'
+  patch 'souvenirs/:id/update', to:'souvenirs#update', as:'sou_update'
+  delete 'souvenirs/destroy/:id', to:'souvenirs#destroy', as:'sou_destroy'
 
   get 'sessions/new'
 

@@ -1,2 +1,5 @@
 <h1>全国お土産検索サイト</h1>
-
+    <% @souvenirs.each do |souvenir| %>
+    <%= link_to souvenir.name, show_path(souvenir.id) %>
+    < <%=  souvenir.prefectures   %> > <br/>
+    <% end %>
