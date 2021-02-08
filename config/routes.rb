@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   post 'souvenirs/create', to:'souvenirs#create', as:'create'
   get 'souvenirs/:id/edit', to:'souvenirs#edit', as: 'sou_edit'
   patch 'souvenirs/:id/update', to:'souvenirs#update', as:'sou_update'
-  delete 'souvenirs/destroy/:id', to:'souvenirs#destroy', as:'sou_destroy'
+  get 'souvenirs/:id/destroy', to:'souvenirs#destroy', as:'sou_destroy'
 
   get 'sessions/new'
 

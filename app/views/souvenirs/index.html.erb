@@ -1,5 +1,8 @@
 <h1>全国お土産検索サイト</h1>
-    <% @souvenirs.each do |souvenir| %>
+
+<% @souvenirs.each do |souvenir| %>
+    <% if souvenir.del_flg != 1 %>
     <%= link_to souvenir.name, show_path(souvenir.id) %>
     < <%=  souvenir.prefectures   %> > <br/>
     <% end %>
+<% end %>

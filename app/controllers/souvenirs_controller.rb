@@ -33,7 +33,7 @@ class SouvenirsController < ApplicationController
 
   def destroy
     @souvenirs = Souvenir.find_by(id: params[:id])
-    @souvenirs.def_flg = 1
+    @souvenirs.del_flg = 1
       if @souvenirs.save
         redirect_to root_path
       end
