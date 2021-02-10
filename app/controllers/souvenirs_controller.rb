@@ -1,6 +1,6 @@
 class SouvenirsController < ApplicationController
   def index
-    @souvenirs = Souvenir.all
+    @souvenirs = Souvenir.all.order(created_at: :desc)
   end
 
   def new

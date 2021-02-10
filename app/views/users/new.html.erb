@@ -1,2 +1,15 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<h1>ユーザー登録</h1>
+<%= form_for(@users, url:{controller: :users,action: :create}) do |f| %>
+    <%= f.label:名前 %>
+    <%= f.text_field:"name" %><br/>
+    <%= f.label:ハンドルネーム %>
+    <%= f.text_field:"handle_name"%><br/>
+    <%= f.label:メールアドレス %>
+    <%= f.text_field:"email"%><br/>
+    <%= f.label:password,'パスワード' %>
+    <%= f.password_field:"password" %><br/>
+    <%= f.label:パスワード（確認用）%>
+    <%= f.password_field:"password_confirmation" %><br/>
+    <%= f.submit"登録する" %>
+
+<% end %>
