@@ -5,6 +5,10 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem "sass-rails", "~>5.0"
+gem "bootstrap-sass", "~>3.3.6"
+gem "jquery-rails"
+gem "jquery-ui-rails"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.7'
@@ -52,5 +56,5 @@ gem 'tzinfo-data'
 
 gem 'carrierwave'
 # gem 'rmagick'
-gem 'bootstrap', '~> 4.3.1'
-gem 'jquery-rails'
+
+

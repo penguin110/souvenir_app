@@ -14,7 +14,7 @@ class SouvenirsController < ApplicationController
   def create
     @souvenirs = Souvenir.new(souvenir_params)
     if @souvenirs.save
-      redirect_to root_path
+      redirect_to root_path, notice:'投稿しました'
     else
     render "new"
     end
