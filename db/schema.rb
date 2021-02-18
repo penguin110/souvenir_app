@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210207125402) do
+ActiveRecord::Schema.define(version: 20210213074506) do
 
   create_table "actions", force: :cascade do |t|
     t.text "comment"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20210207125402) do
     t.string "prefectures"
     t.text "comment"
     t.string "image_name"
-    t.string "user_id"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "del_flg"

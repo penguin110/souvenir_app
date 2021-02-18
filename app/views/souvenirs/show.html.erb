@@ -3,6 +3,6 @@
     品名： <%= @souvenirs.name %><br/>
     都道府県名： <%= @souvenirs.prefectures %><br/>
     コメント： <%= @souvenirs.comment %><br/>
-    画像画像： <%= @souvenirs.image_name %><br/>
+    画像： <%= image_tag@souvenirs.image_name.url if@souvenirs.image_name? %><br/>
     投稿者： <%= @souvenirs.user_id %><br/>
     <%= link_to "編集",sou_edit_path, class:"btn btn-primary" %>

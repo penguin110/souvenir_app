@@ -4,7 +4,8 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <!-- Bootstrap CSS -->
     
     <title>全国お土産検索サイト</title>
@@ -14,20 +15,21 @@
     <header>
     <div class= "row">
       <div class="col-2 text-left ">
+      <% if current_user %>
         <%= link_to"トップページ", root_path %>
         <%= link_to"新規投稿", new_path %>
-      </div>
-      
-      <div class="col-2 text-left">
         <%= link_to"ユーザー一覧", users_index_path %>
         <%= link_to"ユーザー登録", users_new_path %>
+        <%= link_to"ログアウト", logout_path %>
+      <% else %>
         <%= link_to"Log in", sessions_path %>
+      <% end %>
       </div>
     </div>
-
-
     </header>
+
     <% if flash[:notice] %>
+      <div class="">
       <div class = "flash">
         <%= flash[:notice] %>
       </div>

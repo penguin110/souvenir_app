@@ -9,8 +9,8 @@ Rails.application.routes.draw do
   delete 'souvenirs/:id/destroy', to:'souvenirs#destroy', as:'sou_destroy'
 
   get '/login', to:'sessions#new', as:'sessions'
-  post '/login', to:'sessions#create'
-  delete '/logout', to:'sessions#destroy'
+  post '/login', to:'sessions#create', as:'login'
+  delete '/logout', to:'sessions#destroy', as:'logout'
 
   #user
   get 'users/index', to:'users#index', as:'users_index'

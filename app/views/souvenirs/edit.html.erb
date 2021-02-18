@@ -13,9 +13,6 @@
         <%= f.label:写真 %>
         <%= f.file_field:"image_name" %><br/>
 
-        <%= f.label:投稿者 %>
-        <%= f.text_field:"user_id" %><br/>
-
         <%= f.submit"修正する", class:"btn btn-primary btn-sm" %>
     <% end %>
     <%= button_to "削除する", sou_destroy_path(@souvenirs), method: :delete,class:"btn btn-warning btn-sm" %>
