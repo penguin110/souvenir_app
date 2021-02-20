@@ -12,8 +12,8 @@ class SouvenirsController < ApplicationController
   end
 
   def create
-    @souvenirs = Souvenir.new(souvenir_params)
-    if @souvenirs.save
+    @souvenirs = Souvenir.new(souvenir_params.merge(user_id: current_user.id))
+       if @souvenirs.save
       redirect_to root_path, notice:'投稿しました'
     else
     render "new"

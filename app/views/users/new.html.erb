@@ -1,14 +1,14 @@
 <h1>ユーザー登録</h1>
 <%= form_for(@users, url:{controller: :users,action: :create}) do |f| %>
-    <%= f.label:名前 %>
+    <%= f.label:名前 %><br/>
     <%= f.text_field:"name" %><br/>
-    <%= f.label:ハンドルネーム %>
+    <%= f.label:ハンドルネーム %><br/>
     <%= f.text_field:"handle_name"%><br/>
-    <%= f.label:メールアドレス %>
+    <%= f.label:メールアドレス %><br/>
     <%= f.email_field:"email"%><br/>
-    <%= f.label:パスワード %>
+    <%= f.label:パスワード %><br/>
     <%= f.password_field:"password" %><br/>
-    <%= f.label:パスワード（確認用）%>
+    <%= f.label:パスワード（確認用）%><br/>
     <%= f.password_field:"password_confirmation" %><br/>
     <%= f.submit"登録する" ,class: "btn btn-primary" %>
 
