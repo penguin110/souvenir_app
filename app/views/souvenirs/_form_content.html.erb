@@ -1,0 +1,20 @@
+    <%= form_for( @souvenirs, url:{controller: :souvenirs, action: action}) do |f| %>
+        <% if action == "new" %>
+        <% action = "新規投稿" %>
+        <% else %>
+        <% action = "更新" %>
+        <% end %>
+        <%= f.label:品名 %><br/>
+        <%= f.text_field:"name" %><br/>
+
+        <%= f.label:都道府県名 %><br/>
+        <%= f.collection_select :prefecture_id,Prefecture.all, :id, :name, {include_blank: "---"} %><br/>
+
+        <%= f.label:コメント %><br/>
+        <%= f.text_area:"comment" %><br/>
+
+        <%= f.label:写真 %><br/>
+        <%= f.file_field:"image_name" %><br/>
+
+        <%= f.submit action , class:"btn btn-primary btn-sm" %>
+    <% end %>

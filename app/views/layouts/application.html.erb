@@ -12,32 +12,15 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <header>
-    <div class= "row">
-      <div class="col-2 text-left ">
-      <% if current_user %>
-        <%= link_to"トップページ", root_path %>
-        <%= link_to"新規投稿", new_path %>
-        <%= link_to"ユーザー一覧", users_index_path %>
-        <%= link_to"ユーザー登録", users_new_path %>
-        <%= link_to"ログアウト", logout_path, method: :delete %>
-      <% else %>
-        <%= link_to"ログイン", sessions_path %>
-         <%= link_to"ユーザー登録", users_new_path %>
-      <% end %>
-      </div>
+    <div class= "container" >
+    <%= render 'layouts/header' %>
     </div>
-    </header>
-
-    <% if flash[:notice] %>
-      <div class="">
-      <div class = "flash">
-        <%= flash[:notice] %>
-      </div>
-    <% end %>
+    <div class= "container">
+    <%= render 'layouts/message' %>
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <div class="container">
+    <div class="center container">
     <%= yield %>
     </div>
     

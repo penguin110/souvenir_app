@@ -54,4 +54,5 @@ gem 'tzinfo-data'
 gem 'carrierwave'
 # gem 'rmagick'
 
+gem 'active_hash'
 

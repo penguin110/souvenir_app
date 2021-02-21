@@ -1,6 +1,10 @@
 class SouvenirsController < ApplicationController
   def index
+    if current_user
     @souvenirs = Souvenir.all.order(created_at: :desc)
+    else
+      @souvenirs = []
+    end
   end
 
   def new
@@ -12,7 +16,7 @@ class SouvenirsController < ApplicationController
   end
 
   def create
-    @souvenirs = Souvenir.new(souvenir_params.merge(user_id: current_user.id))
+    @souvenirs = current_user.souvenirs.build(souvenir_params)
        if @souvenirs.save
       redirect_to root_path, notice:'投稿しました'
     else
@@ -41,6 +45,6 @@ class SouvenirsController < ApplicationController
 
   private
   def souvenir_params
-      params.require(:souvenir).permit(:name,:prefectures,:comment,:image_name,:user_id)
+      params.require(:souvenir).permit(:name,:prefectures,:comment,:image_name,)
   end
 end

@@ -1,19 +1,5 @@
 <h1>編集ページ</h1>
 <% if @souvenirs.del_flg != 1 %>
-    <%= form_for( @souvenirs, url:{controller: :souvenirs, action: :update}) do |f| %>
-        <%= f.label:品名 %>
-        <%= f.text_field:"name" %><br/>
-
-        <%= f.label:都道府県名 %>
-        <%= f.text_field:"prefectures"%><br/>
-
-        <%= f.label:コメント %>
-        <%= f.text_area:"comment" %><br/>
-
-        <%= f.label:写真 %>
-        <%= f.file_field:"image_name" %><br/>
-
-        <%= f.submit"修正する", class:"btn btn-primary btn-sm" %>
-    <% end %>
+    <%= render 'souvenirs/form_content', action: "update" %>
     <%= button_to "削除する", sou_destroy_path(@souvenirs), method: :delete,class:"btn btn-warning btn-sm" %>
 <% end %>
