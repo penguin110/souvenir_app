@@ -1,6 +1,7 @@
 class Souvenir < ApplicationRecord
     mount_uploader :image_name, ImageUploader
-    belongs_to :user
+    has_many :groups
+    has_many :users, through: :groups
     
     extend ActiveHash::Associations::ActiveRecordExtensions
     belongs_to_active_hash :prefecture

@@ -1,1 +1,6 @@
 <h1>全国お土産検索</h1>
+<div>
+    <% @prefectures.each do |pre| %>
+    <%= link_to pre.name, index_path %><br/>
+    <% end %>
+</div>

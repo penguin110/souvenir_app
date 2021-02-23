@@ -7,12 +7,13 @@
 <div>
 <% @souvenirs.each do |souvenir| %>
     <% if souvenir.del_flg != 1 %>
-    <div class = "col-6 text-left">
+    <div class = "col text-left">
     <%= link_to souvenir.name, show_path(souvenir.id) %>
     </div>
-    <div class = "col-6 text-center">
-    <<%=  souvenir.prefectures   %>> <br/>
+    <div class = "col text-center">
+    <%=  souvenir.prefecture_id   %> <br/>
     </div>
     <% end %>
 <% end %>
 </div>
+

@@ -1,10 +1,10 @@
 class SouvenirsController < ApplicationController
+  def top
+    @prefectures = Prefecture.all
+  end
+
   def index
-    if current_user
-    @souvenirs = Souvenir.all.order(created_at: :desc)
-    else
-      @souvenirs = []
-    end
+    @souvenirs = Souvenir.find_by(id: params[:id])   
   end
 
   def new
@@ -45,6 +45,6 @@ class SouvenirsController < ApplicationController
 
   private
   def souvenir_params
-      params.require(:souvenir).permit(:name,:prefectures,:comment,:image_name,)
+      params.require(:souvenir).permit(:name,:prefecture_id,:comment,:image_name,)
   end
 end

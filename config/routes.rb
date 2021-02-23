@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   #souvenirs 
-  root 'souvenirs#index'
+  root 'souvenirs#top'
+  get 'souvenirs/index', to:'souvenirs#index', as:'index'
   get 'souvenirs/new', to:'souvenirs#new', as:'new'
   get 'souvenirs/:id', to:'souvenirs#show', as:'show'
   post 'souvenirs/create', to:'souvenirs#create', as:'create'
