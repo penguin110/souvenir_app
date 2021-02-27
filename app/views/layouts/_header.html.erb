@@ -1,16 +1,16 @@
 <header>
-    <div class= "row">
-      <div class="d-flex text-left bg-primary text-white">
+  <div class="row">
+    <div class="d-flex text-left bg-primary text-white">
       <% if current_user %>
-        <%= link_to"トップページ", root_path %>
-        <%= link_to"新規投稿", new_path %>
-        <%= link_to"登録一覧", users_index_path %>
-        <%= link_to"ユーザー登録", users_new_path %>
-        <%= link_to"ログアウト", logout_path, method: :delete %>
+      <%= link_to"トップページ", root_path %>
+      <%= link_to"新規投稿", new_path %>
+      <%= link_to User.find(current_user.id).name, users_index_path %>
+      <%= link_to"ユーザー登録", users_new_path %>
+      <%= link_to"ログアウト", logout_path, method: :delete %>
       <% else %>
-        <%= link_to"ログイン", sessions_path %>
-        <%= link_to"ユーザー登録", users_new_path %>
+      <%= link_to"ログイン", sessions_path %>
+      <%= link_to"ユーザー登録", users_new_path %>
       <% end %>
-      </div>
     </div>
-    </header>
+  </div>
+</header>

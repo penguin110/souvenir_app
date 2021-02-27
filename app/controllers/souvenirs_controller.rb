@@ -1,10 +1,11 @@
 class SouvenirsController < ApplicationController
   def top
     @prefectures = Prefecture.all
+    @region_num  = Prefecture.pluck(:region_id).uniq.count
   end
 
   def index
-    @souvenirs = Souvenir.find_by(id: params[:id])
+    @souvenirs = Souvenir.where(prefecture_id: params[:prefecture_id])
   end
 
   def new

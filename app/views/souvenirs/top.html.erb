@@ -1,35 +1,12 @@
 <h1>全国お土産検索</h1>
 <div>
-    <% @prefectures.each do |pre| %>
-        <div>
-        <% if pre.region_id == 1 %>
-        <%= link_to pre.name, sou_index_path %><br/>
-        </div>
-        <div>
-        <% elsif pre.region_id == 2 %>
-        <%= pre.name %><br/>
-        </div>
-        <div>
-        <% elsif pre.region_id == 3 %>
-        <%= pre.name %><br/>
-        </div>
-        <div>
-        <% elsif pre.region_id == 4 %>
-        <%= pre.name %><br/>
-        </div>
-        <div>
-        <% elsif pre.region_id == 5 %>
-        <%= pre.name %><br/>
-        </div>
-        <div>
-        <% elsif pre.region_id == 6 %>
-        <%= pre.name %><br/>
-        </div>
-        <div>
-        <% elsif pre.region_id == 7 %>
-        <%= pre.name %><br/>
-        </div>
-    <% end %>
-    <% end %>
-
+  <% @prefectures.each do |pre| %>
+  <% (@region_num + 1).times do | r | %>
+  <div>
+    <% if pre.region_id == r %>
+    <%= link_to pre.name, sou_index_path(pre.id) %><br />
+  </div>
+  <% end %>
+  <% end %>
+  <% end %>
 </div>

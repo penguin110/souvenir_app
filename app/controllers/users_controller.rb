@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def index
-    @users = current_user.users.find(params[:id])
+    # @users = current_user.users.find(params[:id])
+    @user_posts = User.find(current_user.id).souvenirs
   end
 
   def new
@@ -19,7 +20,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to root_path, notice:"ユーザー「#{@users.name}」を登録しました。"
+      redirect_to root_path, notice:"ユーザー「#{@user.name}」を登録しました。"
     else
       render :new
     end
