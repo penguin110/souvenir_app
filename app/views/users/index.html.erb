@@ -1,4 +1,4 @@
-<h1>ユーザー一覧</h1>
+<h1> <%= @users %> さんの投稿一覧</h1>
 <% @users.each do |user| %><br/>
 <%= link_to user.name, users_show_path(user.id) %>
 <% end %>

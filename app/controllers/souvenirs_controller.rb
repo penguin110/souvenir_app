@@ -4,7 +4,7 @@ class SouvenirsController < ApplicationController
   end
 
   def index
-    @souvenirs = Souvenir.find_by(id: params[:id])   
+    @souvenirs = Souvenir.find_by(id: params[:id])
   end
 
   def new
@@ -45,6 +45,6 @@ class SouvenirsController < ApplicationController
 
   private
   def souvenir_params
-      params.require(:souvenir).permit(:name,:prefecture_id,:comment,:image_name,)
+      params.require(:souvenir).permit(:name,:prefecture_id,:comment,:image_name,:user_id)
   end
 end
