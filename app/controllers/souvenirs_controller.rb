@@ -1,10 +1,12 @@
 class SouvenirsController < ApplicationController
   def top
     @prefectures = Prefecture.all
+    @region_num = Prefecture.pluck(:region_id).uniq.count
   end
 
   def index
-    @souvenirs = Souvenir.find_by(id: params[:id])
+    @prefectures = Prefecture.find_by(id: params[:prefecture_id])
+    @souvenirs = Souvenir.where(prefecture_id: params[:prefecture_id])
   end
 
   def new
@@ -13,6 +15,7 @@ class SouvenirsController < ApplicationController
 
   def show
     @souvenirs = Souvenir.find_by(id: params[:id])
+    @prefectures = Prefecture.find_by(id: params[:prefecture_id])
   end
 
   def create
@@ -31,7 +34,7 @@ class SouvenirsController < ApplicationController
   def update
     @souvenirs = Souvenir.find_by(id: params[:id])
     if @souvenirs.update_attributes(souvenir_params)
-      redirect_to show_path
+      redirect_to sou_show_path
     end
   end
 
@@ -45,6 +48,6 @@ class SouvenirsController < ApplicationController
 
   private
   def souvenir_params
-      params.require(:souvenir).permit(:name,:prefecture_id,:comment,:image_name,:user_id)
+      params.require(:souvenir).permit(:name,:prefecture_id,:comment,:image_name,:user_id,:souvenir,:souvenir_id)
   end
 end

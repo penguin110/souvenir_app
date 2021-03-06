@@ -1,0 +1,15 @@
+<h1> <%= @user.name %>"さんの登録情報"</h1>
+<%= form_for(@user, url:{controller: :users,action: :update}) do |f| %>
+    <%= f.label:名前 %><br/>
+    <%= f.text_field:"name" %><br/>
+    <%= f.label:ハンドルネーム %><br/>
+    <%= f.text_field:"handle_name"%><br/>
+    <%= f.label:メールアドレス %><br/>
+    <%= f.email_field:"email"%><br/>
+    <%= f.label:パスワード %><br/>
+    <%= f.password_field:"password" %><br/>
+    <%= f.label:パスワード（確認用）%><br/>
+    <%= f.password_field:"password_confirmation" %><br/>
+    <%= f.submit"変更する" ,class: "btn btn-primary" %>
+<% end %>
+<%= button_to "削除", users_destroy_path(@user),method: :delete %>

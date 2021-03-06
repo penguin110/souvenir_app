@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   #souvenirs 
   root 'souvenirs#top'
-  get 'souvenirs/index', to:'souvenirs#index', as:'sou_index'
+  get 'souvenirs/:prefecture_id/index', to:'souvenirs#index', as:'sou_index'
   get 'souvenirs/new', to:'souvenirs#new', as:'new'
-  get 'souvenirs/:id', to:'souvenirs#show', as:'show'
+  get 'souvenirs/:id', to:'souvenirs#show', as:'sou_show'
   post 'souvenirs/create', to:'souvenirs#create', as:'create'
   get 'souvenirs/:id/edit', to:'souvenirs#edit', as: 'sou_edit'
   patch 'souvenirs/:id/update', to:'souvenirs#update', as:'sou_update'

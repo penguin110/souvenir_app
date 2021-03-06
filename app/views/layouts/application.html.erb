@@ -12,15 +12,26 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <div class= "container" >
+    <div class= " container"  >
     <%= render 'layouts/header' %>
     </div>
+      
+      <div class="text-center">
+      <img src="/assets/kurashiki.png" width="290" height="200" alt="">
+      <img src="/assets/denim.png" width="290" height="200" alt="">
+      <img src="/assets/mask.png" width="290" height="200" alt="">
+      <img src="/assets/kasa.png" width="290" height="200" alt="">
+      </div>
+      <div class= "text-center ">
+      <h1>全国お土産検索</h1>
+      </div>
     <div class= "container">
     <%= render 'layouts/message' %>
     </div>
+    
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <div class="center container">
+    <div class=" container">
     <%= yield %>
     </div>
     

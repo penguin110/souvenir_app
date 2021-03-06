@@ -1,7 +1,10 @@
+<div class= >
 <h3><%= @souvenirs.user.name %>さんの投稿です</h3>
-
+</div>
+<div>
     品名： <%= @souvenirs.name %><br/>
     都道府県名： <%= @souvenirs.prefecture.name %><br/>
     コメント： <%= @souvenirs.comment %><br/>
     画像： <%= image_tag@souvenirs.image_name.url if@souvenirs.image_name? %><br/>
     <%= link_to "編集",sou_edit_path, class:"btn btn-primary" %>
+</div>

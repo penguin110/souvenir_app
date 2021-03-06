@@ -1,3 +1,5 @@
-<h1>ユーザー詳細</h1>
-<h3><%= @users.name %></h3><br/>
-<%= link_to "編集", users_edit_path, class:"btn btn-primary" %>
+<h1><%= @users.name %>さんの登録情報</h1>
+<h3>name:<%= @users.name %></h3><br/>
+<h3>email:<%= @users.email %><h3><br/>
+
+<%= link_to "変更する", users_edit_path, class:"btn btn-primary" %>

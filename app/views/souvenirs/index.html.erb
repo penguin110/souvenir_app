@@ -1,6 +1,6 @@
 <div class = "row">
     <div class ="col text-center">
-        <h1>全国お土産検索サイト</h1>
+        <h1> <%= @prefectures.name %> のお土産一覧</h1>
     </div>
 </div>
 
@@ -8,11 +8,9 @@
 <% @souvenirs.each do |souvenir| %>
     <% if souvenir.del_flg != 1 %>
     <div class = "col text-left">
-    <%= link_to souvenir.name, show_path(souvenir.id) %>
+    <%= link_to souvenir.name, sou_show_path(souvenir.id) %>
     </div>
-    <div class = "col text-center">
-    <%=  souvenir.prefecture_id   %> <br/>
-    </div>
+
     <% end %>
 <% end %>
 </div>
