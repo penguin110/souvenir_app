@@ -5,7 +5,8 @@ class SouvenirsController < ApplicationController
   end
 
   def index
-    @prefectures = Prefecture.find_by(id: params[:prefecture_id])
+    @prefecture = Prefecture.where(id: params[:prefecture_id])
+    @preName = Prefecture.find_by(id: params[:prefecture_id])
     @souvenirs = Souvenir.where(prefecture_id: params[:prefecture_id])
   end
 
@@ -48,6 +49,6 @@ class SouvenirsController < ApplicationController
 
   private
   def souvenir_params
-      params.require(:souvenir).permit(:name,:prefecture_id,:comment,:image_name,:user_id,:souvenir,:souvenir_id)
+      params.require(:souvenir).permit(:name,:prefecture_id,:comment,:image_name,:user_id)
   end
 end

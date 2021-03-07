@@ -12,15 +12,15 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <div class= " container"  >
     <%= render 'layouts/header' %>
-    </div>
       
-      <div class="text-center">
-      <img src="/assets/kurashiki.png" width="290" height="200" alt="">
-      <img src="/assets/denim.png" width="290" height="200" alt="">
-      <img src="/assets/mask.png" width="290" height="200" alt="">
-      <img src="/assets/kasa.png" width="290" height="200" alt="">
+      <div style= "width:100%">
+      <ul class= "top-image">
+      <li><img src="/assets/kurashiki.png" alt=""></li>
+      <li><img src="/assets/denim.png" alt=""></li>
+      <li><img src="/assets/mask.png" alt=""></li>
+      <li><img src="/assets/kasa.png" alt=""></li>
+      </ul>
       </div>
       <div class= "text-center ">
       <h1>全国お土産検索</h1>
@@ -29,6 +29,7 @@
     <%= render 'layouts/message' %>
     </div>
     
+    <%= render 'layouts/sidebar', locals: { prefectures: @prefecture, region_num: @region_num } %>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <div class=" container">

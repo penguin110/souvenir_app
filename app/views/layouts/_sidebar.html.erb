@@ -1,0 +1,9 @@
+<div class = "sidebar-link col-xs-2 bg-primary ">
+    <% @prefectures.each do |pre| %>
+        <% (@region_num + 1).times do |r| %>
+            <% if pre.region_id == r %>
+            <%= link_to pre.name, sou_index_path(pre.id) %><br/>
+            <% end %>
+        <% end %>
+    <% end %>
+</div>

@@ -1,16 +1,14 @@
 <div class = "row">
     <div class ="col text-center">
-        <h1> <%= @prefectures.name %> のお土産一覧</h1>
+        <h1> <%= @preName.name %> のお土産一覧</h1>
     </div>
 </div>
-
 <div>
 <% @souvenirs.each do |souvenir| %>
     <% if souvenir.del_flg != 1 %>
     <div class = "col text-left">
     <%= link_to souvenir.name, sou_show_path(souvenir.id) %>
     </div>
-
     <% end %>
 <% end %>
 </div>

@@ -1,16 +1,6 @@
 
 
-<div class = "col-xs-2 bg-primary border-solid">
-    <% @prefectures.each do |pre| %>
-    <% (@region_num + 1).times do |r| %>
-        <a class = "">
-            <% if pre.region_id == r %>
-            <%= link_to pre.name, sou_index_path(pre.id) %><br/>
-            <% end %>
-        </a>
-    <% end %>
-    <% end %>
-</div>
+
 
 <div class = "col-xs-10">
     <% @prefectures.pluck(:region_id).uniq.each do |pre|%>
