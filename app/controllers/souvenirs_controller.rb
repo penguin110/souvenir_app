@@ -2,12 +2,21 @@ class SouvenirsController < ApplicationController
   def top
     @prefectures = Prefecture.all
     @region_num = Prefecture.pluck(:region_id).uniq.count
+    @prefecture = Prefecture.find_by(prefecture_id: params[:prefecture_id])
+    @pre1 = Prefecture.where(region_id:[1])
+    @pre2 = Prefecture.where(region_id:[2])
+    @pre3 = Prefecture.where(region_id:[3])
+    @pre4 = Prefecture.where(region_id:[4])
+    @pre5 = Prefecture.where(region_id:[5])
+    @pre6 = Prefecture.where(region_id:[6])
+    @pre7 = Prefecture.where(region_id:[7])
   end
 
   def index
     @prefecture = Prefecture.where(id: params[:prefecture_id])
     @preName = Prefecture.find_by(id: params[:prefecture_id])
     @souvenirs = Souvenir.where(prefecture_id: params[:prefecture_id])
+    
   end
 
   def new

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   patch 'souvenirs/:id/update', to:'souvenirs#update', as:'sou_update'
   delete 'souvenirs/:id/destroy', to:'souvenirs#destroy', as:'sou_destroy'
 
+  # session
   get '/login', to:'sessions#new', as:'sessions'
   post '/login', to:'sessions#create', as:'login'
   delete '/logout', to:'sessions#destroy', as:'logout'
