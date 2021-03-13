@@ -13,7 +13,7 @@ class Prefecture < ActiveHash::Base
         {id: 16,region_id: 3, name: '富山県'}, {id: 17,region_id: 3, name: '石川県'}, {id: 18,region_id: 3, name: '福井県'},
         {id: 19,region_id: 3, name: '山梨県'}, {id: 20,region_id: 3, name: '長野県'}, {id: 21,region_id: 3, name: '岐阜県'},
         {id: 22,region_id: 3, name: '静岡県'}, {id: 23,region_id: 3, name: '愛知県'}, {id: 24,region_id: 4, name: '三重県'},
-        {id: 25,region_id: 4, name: '滋賀県'}, {id: 26,region_id: 4, name: '京都府'}, {id: 27,region_id: 4, name: '大阪府'},
+        {id: 25,region_id: 4, name: '滋賀県'}, {id: 26,region_id: 1, name: '京都府'}, {id: 27,region_id: 4, name: '大阪府'},
         {id: 28,region_id: 4, name: '兵庫県'}, {id: 29,region_id: 4, name: '奈良県'}, {id: 30,region_id: 4, name: '和歌山県'},
         {id: 31,region_id: 5, name: '鳥取県'}, {id: 32,region_id: 5, name: '島根県'}, {id: 33,region_id: 5, name: '岡山県'},
         {id: 34,region_id: 5, name: '広島県'}, {id: 35,region_id: 5, name: '山口県'}, {id: 36,region_id: 6, name: '徳島県'},

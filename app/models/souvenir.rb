@@ -5,4 +5,8 @@ class Souvenir < ApplicationRecord
     
     extend ActiveHash::Associations::ActiveRecordExtensions
     belongs_to_active_hash :prefecture
+
+    def get_pref_all
+      @prefectures = Prefecture.all
+    end
 end

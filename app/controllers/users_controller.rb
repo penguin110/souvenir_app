@@ -2,8 +2,8 @@ class UsersController < ApplicationController
   def index
     # @users = current_user.users.find(params[:id])
     @user_posts = User.find(current_user.id).souvenirs
-    @souvenir = Souvenir.find_by(id:params[:souvenir_id])
-    @souvenirs = Souvenir.where(prefecture_id: params[:prefecture_id])
+    # @souvenir = Souvenir.find_by(id:params[:souvenir_id])
+    # @souvenirs = Souvenir.where(prefecture_id: params[:prefecture_id])
     
   end
 
