@@ -3,6 +3,7 @@ class SouvenirsController < ApplicationController
     @prefectures = Prefecture.all
     @region_num = Prefecture.pluck(:region_id).uniq.count
     @prefecture = Prefecture.find_by(prefecture_id: params[:prefecture_id])
+    @region = Region.find_by(params[:id])
     @pre1 = Prefecture.where(region_id:[1])
     @pre2 = Prefecture.where(region_id:[2])
     @pre3 = Prefecture.where(region_id:[3])
