@@ -1,17 +1,13 @@
 <div class = "row">
     <div class ="col text-center" style="">
-    
+        <% prefecture_view %>
+        <h1><%= @prefecture.name %>のお土産</h1>
+        
         <% @souvenirs.each do |souvenir| %>
             <% if souvenir.del_flg != 1 %>
-                <h1><%= souvenir.prefecture.name %>のお土産</h1>
-            <% end %>
-        <% end %>
-
-        <% @souvenirs.each do |souvenir| %>
-            <% if souvenir.del_flg != 1 %>
-                <h1><%= souvenir %>のお土産</h1>
-                <div class = "col text-left">
-                <%= link_to souvenir.name, sou_show_path(souvenir.id) %>
+                <div class = "col text-center">
+                <%= image_tag souvenir.image_name.to_s,size:'200x200' %>
+                <h3><%= link_to souvenir.name, sou_show_path(souvenir.id) %></h3>
                 </div>
             <% end %>
         <% end %>
