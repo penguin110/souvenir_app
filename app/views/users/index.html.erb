@@ -1,6 +1,5 @@
+<div class="text-center">
 <h1> <%= current_user.name %> さんの投稿一覧</h1>
-
-<div>
 <% @user_posts.each do |post| %><br/>
     <%= link_to post.name, sou_show_path(post.id) %>
     <%= post.image_name %>
