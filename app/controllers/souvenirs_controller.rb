@@ -1,3 +1,4 @@
+require "net/http"
 class SouvenirsController < ApplicationController
   def top
 
@@ -5,6 +6,12 @@ class SouvenirsController < ApplicationController
 
   def index
     @souvenirs = Souvenir.where(prefecture_id: params[:prefecture_id])
+    prefecture = @souvenirs.name
+url = URI.encode("https://ja.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles=" + prefecture)
+uri = URI.parse(url)
+response = Net::HTTP.get_response(uri)
+response.code # status code
+@wiki = response.body.gsub(/\\u([\da-fA-F]{4})/) { [$1].pack('H*').unpack('n*').pack('U*') } # response body
   end
 
   def new
