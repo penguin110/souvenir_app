@@ -8,6 +8,22 @@
     <%= image_tag@souvenirs.image_name.url if@souvenirs.image_name?  %><br/>
     
     <% if @souvenirs.user_id == current_user.id %>
-    <%= link_to "編集",sou_edit_path, class:"btn btn-primary" %>
+    <%= link_to "編集", edit_souvenir_path, class:"btn btn-primary" %>
     <% end %>
+    <h2>コメント一覧</h2>
+    <% @comments.each do |c| %>
+    <div>
+     <a href="<%= @souvenirs.user.id %>" ><%= c.user.name %>さんのコメント:</a>
+     <%= c.content %>
+    <hr>
+    </div>
+    <% end %>
+    <%= form_for [@souvenirs, @comment] do |f| %>
+    <%= f.text_field :content %>
+    <%= f.hidden_field :souvenir_id, value:@souvenirs.id %>
+    <br>
+    <%= f.submit 'コメントする' %>
+    <% end %>
+    <%= link_to "トップページ", root_path %>
+
 </div>

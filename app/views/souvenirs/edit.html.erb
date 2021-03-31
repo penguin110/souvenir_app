@@ -1,5 +1,5 @@
 <h1>編集ページ</h1>
 <% if @souvenirs.del_flg != 1 %>
     <%= render 'souvenirs/form_content', action: "update" %>
-    <%= button_to "削除する", sou_destroy_path(@souvenirs), method: :delete,class:"btn btn-warning btn-sm" %>
+    <%= button_to "削除する", edit_souvenir_path(@souvenirs), method: :delete,class:"btn btn-warning btn-sm" %>
 <% end %>

@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get 'souvenirs/:id/edit', to:'souvenirs#edit', as: 'sou_edit'
   patch 'souvenirs/:id/update', to:'souvenirs#update', as:'sou_update'
   delete 'souvenirs/:id/destroy', to:'souvenirs#destroy', as:'sou_destroy'
+  
+  post 'souvenir/:souvenir_id/comments', to:'comments#create', as:'souvenir_comments'
 
   # session
   get '/login', to:'sessions#new', as:'sessions'
