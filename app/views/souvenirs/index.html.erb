@@ -1,21 +1,21 @@
-<div class = "row">
-    <div class ="col text-center" style="">
-        <% prefecture_view %>
-        <h1><%= @prefecture.name %>のお土産</h1>
-        <hr>
-        <% @souvenirs.each do |souvenir| %>
-            <% if souvenir.del_flg != 1 %>
-                <div class = "col text-center">
-                <%= image_tag souvenir.image_name.to_s,size:'100x100' %>
-                <h3><%= link_to souvenir.name, sou_show_path(souvenir.id) %></h3>
-                <hr>
-                </div>
-            <% end %>
-        <% end %>
+<div class="row">
+  <div class="col text-center" style="">
+    <% prefecture_view %>
+    <h1><%= @prefecture.name %>のお土産</h1>
+    <hr>
+    <% @souvenirs.each do |souvenir| %>
+    <% if souvenir.del_flg != 1 %>
+    <div class="col text-center">
+      <%= image_tag souvenir.image_name.to_s,size:'100x100' %>
+      <h3><%= link_to souvenir.name, sou_show_path(souvenir.id) %></h3>
+      <hr>
     </div>
+    <% end %>
+    <% end %>
+  </div>
 </div>
 <div>
-    <%= @wiki %>
+  <% @wiki[:query][:pages].each do |key, value| %>
+  <%= value[:extract] %>
+  <% end %>
 </div>
-
-

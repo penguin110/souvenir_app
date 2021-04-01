@@ -18,10 +18,7 @@ class SouvenirsController < ApplicationController
       response.code # status code
       @wiki = response.body #.gsub(/\\u([\da-fA-F]{4})/) { [$1].pack('H*').unpack('n*').pack('U*') } # response body
       @wiki = JSON.parse(@wiki,symbolize_names: true)
-      p "===================="
-      p @wiki[1]
-      p "===================="
-      # @wiki = @wiki.query
+      end
     end
 end
 
