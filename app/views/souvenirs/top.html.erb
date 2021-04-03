@@ -5,6 +5,7 @@
         <% @prefectures.each do |p| %>
             <% if p.region_id == r.id %>
                 <%= link_to p.name, sou_index_path(p) %>
+                (<%= p.liked_users.count %>)
             <% end %>
         <% end %>
     <% end %>

@@ -10,16 +10,24 @@
     <% if @souvenirs.user_id == current_user.id %>
     <%= link_to "編集", edit_souvenir_path, class:"btn btn-primary" %>
     <% end %>
+    <h3>イイね件数：<%=@souvenir .likes.count %></h3>
+    <% if current_user.already_liked?(@souvenir) %>
+        <%= button_to 'イイねを取り消す', souvenir_like_path(@souvenir), method: :delete %>
+        <% else %>
+        <%= button_to 'イイね', souvenir_likes_path(@souvenir) %>
+        <% end %>
+
     <h2>コメント一覧</h2>
     <% @comments.each do |c| %>
     <div>
-     <a href="<%= @souvenirs.user.id %>" ><%= c.user.name %>さんのコメント:</a>
-     <%= c.content %>
+        <h4><%= c.content %></h4>
+        <a href="<%= @souvenirs.user.id %>" ><%= c.user.name %>さんのコメント</a>
+     
     <hr>
     </div>
     <% end %>
     <%= form_for [@souvenirs, @comment] do |f| %>
-    <%= f.text_field :content %>
+    <%= f.text_area :content %>
     <%= f.hidden_field :souvenir_id, value:@souvenirs.id %>
     <br>
     <%= f.submit 'コメントする' %>

@@ -8,8 +8,13 @@ Rails.application.routes.draw do
   get 'souvenirs/:id/edit', to:'souvenirs#edit', as: 'sou_edit'
   patch 'souvenirs/:id/update', to:'souvenirs#update', as:'sou_update'
   delete 'souvenirs/:id/destroy', to:'souvenirs#destroy', as:'sou_destroy'
-  
+
+  #コメント機能
   post 'souvenir/:souvenir_id/comments', to:'comments#create', as:'souvenir_comments'
+
+  #イイね機能
+  post 'souvenirs/:souvenir_id/likes', to:'likes#create', as:'souvenir_likes'
+  delete 'souvenirs/souvenir_id/likes/:id', to:'likes#destroy', as:'souvenir_like'
 
   # session
   get '/login', to:'sessions#new', as:'sessions'

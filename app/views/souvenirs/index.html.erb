@@ -2,7 +2,13 @@
     <div class ="col text-center" style="">
         <% prefecture_view %>
         <h1><%= @prefecture.name %>のお土産</h1>
+        <div>
+            <% @wiki[:query][:pages].each do |key, value| %>
+            <%= value[:extract] %>
+            <% end %>
+        </div>
         <hr>
+        
         <% @souvenirs.each do |souvenir| %>
             <% if souvenir.del_flg != 1 %>
                 <div class = "col text-center">
@@ -14,8 +20,6 @@
         <% end %>
     </div>
 </div>
-<div>
-    <%= @wiki %>
-</div>
+
 
 

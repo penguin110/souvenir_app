@@ -18,10 +18,6 @@ class SouvenirsController < ApplicationController
       response.code # status code
       @wiki = response.body #.gsub(/\\u([\da-fA-F]{4})/) { [$1].pack('H*').unpack('n*').pack('U*') } # response body
       @wiki = JSON.parse(@wiki,symbolize_names: true)
-      p "===================="
-      p @wiki[1]
-      p "===================="
-      # @wiki = @wiki.query
     end
 end
 
@@ -32,7 +28,9 @@ end
   def show
     @souvenirs = Souvenir.find_by(id: params[:id])
     @comments = @souvenirs.comments
-    @comment = Comment.new
+    @comment = current_user.comments.new
+    @like = Like.new
+    # @comment = Comment.new
     # @prefectures = Prefecture.find_by(id: params[:prefecture_id])
   end
 

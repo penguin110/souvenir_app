@@ -3,6 +3,7 @@ class Souvenir < ApplicationRecord
     belongs_to :user
     belongs_to :prefecture
     has_many :comments
+    has_many :liked_users, through: :likes,  source: :user
     
     extend ActiveHash::Associations::ActiveRecordExtensions
     belongs_to_active_hash :prefecture
