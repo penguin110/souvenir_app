@@ -22,9 +22,7 @@ header a {
     
 }
 
-.header-style{
-    height: 50px;
-}
+
 .top-image{
     list-style: none;
     display: flex;
@@ -41,3 +39,44 @@ header a {
 .sidebar-link a{
     color:white;
 }
+
+.navbar-nav {
+    list-style: none;
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+}
+.navbar-title li{
+    list-style: none;
+    height: 50px;
+    line-height: 50px;
+    width: 180px;
+    vertical-align: center;
+    margin: 0 auto;
+    font-size:large;
+    float: left;
+    text-align: center;
+    background-color: primary;
+   
+
+}
+.navbar-nav li{
+    height: 50px;
+    line-height: 50px;
+    width: 100px;
+    vertical-align: center;
+    margin: 0 auto;
+    font-size:small;
+    float: left;
+    text-align: center;
+    background-color: primary;
+   
+
+}
+
+.navbar-nav li a{
+    text-decoration: none;
+    font-weight: bold;
+}
+
+

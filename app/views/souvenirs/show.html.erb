@@ -8,13 +8,13 @@
     <%= image_tag@souvenirs.image_name.url if@souvenirs.image_name?  %><br/>
     
     <% if @souvenirs.user_id == current_user.id %>
-    <%= link_to "編集", edit_souvenir_path, class:"btn btn-primary" %>
+    <%= link_to "編集", sou_edit_path(@souvenirs.id), class:"btn btn-primary" %>
     <% end %>
-    <h3>イイね件数：<%=@souvenir .likes.count %></h3>
-    <% if current_user.already_liked?(@souvenir) %>
-        <%= button_to 'イイねを取り消す', souvenir_like_path(@souvenir), method: :delete %>
+    <h3>イイね件数： <%= @souvenirs.likes.count %> </h3>
+    <% if current_user.likes.find_by(souvenir_id: @souvenirs.id)%>
+        <%= button_to 'イイねを取り消す', souvenir_like_path(@souvenirs), method: :delete %>
         <% else %>
-        <%= button_to 'イイね', souvenir_likes_path(@souvenir) %>
+        <%= button_to 'イイね', souvenir_likes_path(@souvenirs) %>
         <% end %>
 
     <h2>コメント一覧</h2>

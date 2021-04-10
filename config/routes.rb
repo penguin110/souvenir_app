@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   #イイね機能
   post 'souvenirs/:souvenir_id/likes', to:'likes#create', as:'souvenir_likes'
-  delete 'souvenirs/souvenir_id/likes/:id', to:'likes#destroy', as:'souvenir_like'
+  delete 'souvenirs/:souvenir_id/likes/:id', to:'likes#destroy', as:'souvenir_like'
 
   # session
   get '/login', to:'sessions#new', as:'sessions'

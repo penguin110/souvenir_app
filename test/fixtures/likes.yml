@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  souvenir: one
-  user: one
+  souvenir_id: 1
+  user_id: 1
 
 two:
-  souvenir: two
-  user: two
+  souvenir_id: 1
+  user_id: 1

@@ -29,7 +29,6 @@ end
     @souvenirs = Souvenir.find_by(id: params[:id])
     @comments = @souvenirs.comments
     @comment = current_user.comments.new
-    @like = Like.new
     # @comment = Comment.new
     # @prefectures = Prefecture.find_by(id: params[:prefecture_id])
   end
@@ -37,7 +36,8 @@ end
   def create
     @souvenirs = current_user.souvenirs.build(souvenir_params)
        if @souvenirs.save
-      redirect_back(fallback_location: root_path) #, notice:'投稿しました'
+        redirect_to root_path
+      #redirect_back(fallback_location: root_path) #, notice:'投稿しました'
     else
     render "new"
     end

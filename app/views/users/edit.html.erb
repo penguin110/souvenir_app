@@ -1,4 +1,5 @@
-<h1> <%= @user.name %>"さんの登録情報"</h1>
+<div class= "container text-center">
+<h1> <%= @user.name %>さんの登録情報</h1>
 <%= form_for(@user, url:{controller: :users,action: :update}) do |f| %>
     <%= f.label:名前 %><br/>
     <%= f.text_field:"name" %><br/>
@@ -13,3 +14,4 @@
     <%= f.submit"変更する" ,class: "btn btn-primary" %>
 <% end %>
 <%= button_to "削除", users_destroy_path(@user),method: :delete %>
+</div>
