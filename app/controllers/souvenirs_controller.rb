@@ -7,10 +7,10 @@ class SouvenirsController < ApplicationController
 
   def index
     @souvenirs = Souvenir.where(prefecture_id: params[:prefecture_id])
-    prefecture = @souvenirs.first&.prefecture&.name
-    p "===================="
-    p prefecture
-    p "===================="
+    # prefecture = @souvenirs.first&.prefecture&.name
+    # p "===================="
+    # p prefecture
+    # p "===================="
     if prefecture 
       url = URI.encode("https://ja.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles=" + prefecture)
       uri = URI.parse(url)
