@@ -7,7 +7,7 @@ class SouvenirsController < ApplicationController
 
   def index
     @souvenirs = Souvenir.where(prefecture_id: params[:prefecture_id])
-    # prefecture = @souvenirs.first&.prefecture&.name
+     prefecture = @souvenirs.first&.prefecture&.name
     # p "===================="
     # p prefecture
     # p "===================="
