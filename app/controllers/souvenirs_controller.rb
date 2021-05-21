@@ -6,13 +6,13 @@ class SouvenirsController < ApplicationController
   end
 
   def index
-    @souvenirs = Souvenir.where(prefecture_id: params[:prefecture_id])
+    @souvenirs = Souvenir.where(id: params[:prefecture_id])
      prefecture = @souvenirs.first&.prefecture&.name
     # p "===================="
     # p prefecture
     # p "===================="
     if prefecture 
-      url = URI.encode('https://ja.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles=' + prefecture)
+      url = URI.encode("https://ja.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles=" + prefecture)
       uri = URI.parse(url)
       response = Net::HTTP.get_response(uri)
       response.code # status code
